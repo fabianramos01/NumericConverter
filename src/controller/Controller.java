@@ -42,8 +42,10 @@ public class Controller implements ActionListener {
 		String command = e.getActionCommand().toString();
 		if (command.substring(0, 1).equals("d")) {
 			managerCon.setFirstBase(command.substring(1, command.length()));
+			pFrame.setSelection(command);
 		} else if (command.substring(0, 1).equals("a")) {
 			managerCon.setSecondBase(command.substring(1, command.length()));
+			pFrame.setSelection(command);
 		} else {
 			switch (ActionCommand.valueOf(e.getActionCommand())) {
 			case COMMAND_CONVERT:
@@ -51,7 +53,6 @@ public class Controller implements ActionListener {
 				break;
 			}
 		}
-
 	}
 
 }

@@ -30,8 +30,4 @@ public class PanelNumber extends JPanel {
 	public String getNumber() {
 		return textField.getText();
 	}
-
-	public void setText() {
-		textField.setText("");
-	}
 }

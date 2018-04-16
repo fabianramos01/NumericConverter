@@ -13,6 +13,7 @@ public class PrincipalFrame extends JFrame {
 
 	private static final long serialVersionUID = 1L;
 	private PanelNumber panelNumber;
+	private PanelOption panelOption;
 	private JLabel labelResult;
 
 	public PrincipalFrame(ActionListener listener) {
@@ -21,7 +22,8 @@ public class PrincipalFrame extends JFrame {
 		setSize(ConstantList.WIDTH, ConstantList.HEIGHT);
 		panelNumber = new PanelNumber(listener);
 		add(panelNumber, BorderLayout.NORTH);
-		add(new PanelOption(listener), BorderLayout.CENTER);
+		panelOption = new PanelOption(listener);
+		add(panelOption, BorderLayout.CENTER);
 		result();
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 		setLocationRelativeTo(null);
@@ -33,9 +35,14 @@ public class PrincipalFrame extends JFrame {
 		add(labelResult, BorderLayout.SOUTH);
 	}
 	
+	public void setSelection(String command) {
+		panelOption.setSelection(command);
+		repaint();
+	}
+	
 	public void setResult(String number) {
 		labelResult.setText(ConstantList.RESULT + number);
-		panelNumber.setText();
+		panelOption.resetSelection(0, 8);
 		repaint();
 	}
 	
