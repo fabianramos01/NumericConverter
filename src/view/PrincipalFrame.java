@@ -1,13 +1,13 @@
 package view;
 
 import java.awt.BorderLayout;
-import java.awt.event.ActionListener;
 
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 
 import controller.ConstantList;
+import controller.Controller;
 
 public class PrincipalFrame extends JFrame {
 
@@ -16,10 +16,9 @@ public class PrincipalFrame extends JFrame {
 	private PanelOption panelOption;
 	private JLabel labelResult;
 
-	public PrincipalFrame(ActionListener listener) {
+	public PrincipalFrame(Controller listener) {
 		setTitle(ConstantList.TITLE);
 		setIconImage(new ImageIcon(getClass().getResource(ConstantList.ICON)).getImage());
-		setSize(ConstantList.WIDTH, ConstantList.HEIGHT);
 		panelNumber = new PanelNumber(listener);
 		add(panelNumber, BorderLayout.NORTH);
 		panelOption = new PanelOption(listener);
@@ -27,11 +26,12 @@ public class PrincipalFrame extends JFrame {
 		result();
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 		setLocationRelativeTo(null);
+		setSize(ConstantList.WIDTH, ConstantList.HEIGHT);
 		setVisible(true);
 	}
 	
 	private void result() {
-		labelResult = UtilityList.createJLabel(ConstantList.RESULT, ConstantList.WORD_FONT, ConstantList.BLUE);
+		labelResult = UtilityList.createJLabel(ConstantList.RESULT, ConstantList.TITLE_FONT, ConstantList.BLUE);
 		add(labelResult, BorderLayout.SOUTH);
 	}
 	

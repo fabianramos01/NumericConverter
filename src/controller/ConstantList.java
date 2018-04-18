@@ -12,7 +12,7 @@ public class ConstantList {
 	public static final Color BLUE = Color.decode("#0C1E94");
 	public static final Color BLACK = Color.BLACK;
 	public static final Color WHITE = Color.WHITE;
-	public static final int WIDTH = 500;
+	public static final int WIDTH = 700;
 	public static final int HEIGHT = 700;
 	
 	public static final String BINARY = "Binario";

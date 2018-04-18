@@ -2,13 +2,15 @@ package controller;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 
 import javax.swing.JOptionPane;
 
 import model.ManagerCon;
 import view.PrincipalFrame;
 
-public class Controller implements ActionListener {
+public class Controller implements ActionListener, KeyListener {
 
 	private ManagerCon managerCon;
 	private PrincipalFrame pFrame;
@@ -53,6 +55,21 @@ public class Controller implements ActionListener {
 				break;
 			}
 		}
+	}
+
+	@Override
+	public void keyPressed(KeyEvent e) {
+		if (e.getKeyCode() == KeyEvent.VK_ENTER) {
+			convert();
+		}
+	}
+
+	@Override
+	public void keyReleased(KeyEvent e) {
+	}
+
+	@Override
+	public void keyTyped(KeyEvent e) {
 	}
 
 }
