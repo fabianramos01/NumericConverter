@@ -19,7 +19,7 @@ public class ConstantList {
 	public static final String DECIMAL = "Decimal";
 	public static final String OCTAL = "Octal";
 	public static final String HEXADECIMAL = "Hexadecimal";
-	public static final String A_SEPARATOR = "a";
+	public static final String A_SEPARATOR = "->";
 	public static final String RESULT = "El resultado de la conversión es: ";
 	
 	public static final String SEPARATOR = ".";

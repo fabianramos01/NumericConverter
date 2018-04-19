@@ -3,6 +3,7 @@ package view;
 import java.awt.GridLayout;
 import java.awt.event.ActionListener;
 
+import javax.swing.BorderFactory;
 import javax.swing.JButton;
 import javax.swing.JPanel;
 
@@ -23,6 +24,7 @@ public class PanelOption extends JPanel {
 
 	private JPanel createPanel(String init, ActionListener listener) {
 		JPanel panel = new JPanel(new GridLayout(4, 1));
+		panel.setBorder(BorderFactory.createTitledBorder("Entrada"));
 		jButtons[0] = UtilityList.createJButtonText(init + ConstantList.DECIMAL, ConstantList.DECIMAL,
 				ConstantList.BLACK, ConstantList.WHITE, ConstantList.WORD_FONT, listener);
 		jButtons[1] = UtilityList.createJButtonText(init + ConstantList.BINARY, ConstantList.BINARY, ConstantList.BLACK,
@@ -40,6 +42,7 @@ public class PanelOption extends JPanel {
 
 	private JPanel createPanelTo(String init, ActionListener listener) {
 		JPanel panel = new JPanel(new GridLayout(4, 1));
+		panel.setBorder(BorderFactory.createTitledBorder("Salida"));
 		jButtons[4] = UtilityList.createJButtonText(init + ConstantList.DECIMAL, ConstantList.DECIMAL,
 				ConstantList.BLACK, ConstantList.WHITE, ConstantList.WORD_FONT, listener);
 		jButtons[5] = UtilityList.createJButtonText(init + ConstantList.BINARY, ConstantList.BINARY, ConstantList.BLACK,
